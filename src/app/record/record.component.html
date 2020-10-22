@@ -1,0 +1,70 @@
+<div class="container center-box">
+  <div class="row">
+    <div class="col-lg-8 offset-2 text-white">
+      <h4 class="pl-1">Record</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card record-card shadow py-5">
+        <div class="row" *ngIf="!recBtnClicked">
+          <div class="col-12 text-center">
+            <button
+              type="button"
+              class="btn btn-danger btn-circle btn-xl"
+              (click)="onRecClicked()"
+            >
+              Rec
+            </button>
+          </div>
+        </div>
+        <div class="row" *ngIf="recBtnClicked">
+          <div class="col-6">
+            <div class="text-right text-white pr-5 pt-4" style="font-size: x-large;">{{ recordedTime }}</div>
+          </div>
+          <div class="col-6">
+     <!--        <button class="btn btn-secondary py-2" (click)="onPauseClicked()" *ngIf="!isPaused">
+              <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                class="bi bi-pause"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"
+                />
+              </svg>
+            </button>
+            <button class="btn btn-secondary py-2" (click)="onPlayClicked()" *ngIf="isPaused">
+              <fa-icon [icon]="faPlay"></fa-icon>
+            </button> -->
+            <button
+              class="btn btn-success stopBtn py-4 ml-2"
+              (click)="onStopClicked()"
+            >
+              <fa-icon [icon]="faSquare" size="2x"></fa-icon>
+            </button>
+          </div>
+        </div>
+        <div class="row mt-3" *ngIf="!isRecording && blobUrl">
+          <div class="col-5 offset-3 pl-4 px-0 text-center">
+            <audio  controls controlsList="nodownload">
+              <source [src]="blobUrl" type="audio/webm">
+            </audio>
+          </div>
+          <div class="col-2 pt-1">
+            <div>
+              <button class="btn btn-dark downloadBtn" (click)="onSaveBtnClicked()">Download</button>
+            </div>
+          </div>
+        </div>
+       
+      
+      </div>
+    </div>
+  </div>
+</div>
+

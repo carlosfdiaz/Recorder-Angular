@@ -1,0 +1,33 @@
+.center-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.record-card{
+    background-color: #404742;
+}
+
+h4{
+    letter-spacing: 1px;
+}
+
+.btn-circle.btn-xl { 
+    width: 100px; 
+    height: 100px; 
+    padding: 10px 16px; 
+    border-radius: 52px; 
+    font-size: 16px; 
+    text-align: center; 
+} 
+
+.stopBtn{
+    padding-right: 28px;
+    padding-left: 28px;
+}
+
+.downloadBtn{
+    height: 48px;
+    
+}
